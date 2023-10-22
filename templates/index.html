@@ -12,8 +12,9 @@
     
 <body>
     <h1>Welcome to the food content app!</h1>
+    <h2>Please insert a food name: </h2>
     <form action="{{ url_for('get_content') }}">
-        <input type="text" name="food" id="food" placeholder="Please insert a food name" />
+        <input type="text" name="food" id="food" placeholder="Insert food here" />
         <button type="submit">Submit</button>
     </form>
 

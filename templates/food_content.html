@@ -12,11 +12,11 @@
     
 <body>
     <h2>Here are some nutritional information about {{ food }} :</h2>
-
+<p>
 {% for table in tables %}
             {{ table|safe }}
 {% endfor %}
-    
+</p>
     <form action = "{{ url_for('get_content') }}">
         <input type="text" name="food" id="food" placeholder="Please insert a food name" />
         <button type="submit">Submit</button>
