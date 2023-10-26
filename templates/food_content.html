@@ -6,18 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food content</title>
-    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylessheet" />
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
     
 </head> 
     
 <body>
     <h3>Here is some nutritional information about {{ food }} :</h3>
-<p>
+    
 {% for table in tables %}
             {{ table|safe }}
 {% endfor %}
-</p>  
-    <h3>Please insert another food name:</h3>
+
+    <h3>Please insert a food name:</h3>
 
     <form action = "{{ url_for('get_content') }}">
         <input type="text" name="food" id="food" placeholder="Enter food name here" />

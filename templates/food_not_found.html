@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food not found</title>
-    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylessheet" />
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
     
 </head> 
     
@@ -15,9 +15,10 @@
     <h2>Sorry, this food name is not in the database.</h2>
     <img src="../static/{{ image }}">
     <a href="https://www.vecteezy.com/free-vector/vegetable">Vegetable Vectors by Vecteezy</a>
-    <h2>Do you want to try again?</h2> 
+    <h2>Do you want to try again?</h2>
+    <h4>(Please answer yes or no)<h4>
     <form action="{{ url_for('get_content2') }}">
-        <input type="text" name="yes_no" id="yes_no" placeholder="Please enter yes or no" />
+        <input type="text" name="yes_no" id="yes_no" placeholder="Enter yes or no" />
         <button type="submit">Submit</button>
     </form>
 
