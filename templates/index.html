@@ -11,23 +11,39 @@
 </head> 
     
 <body>
-    <h1>Welcome to the food content app!</h1>
-    
-    <img src="../static/{{ image }}">
-
- <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/137643065@N06/24029103260">food-salad-healthy-lunch</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/137643065@N06">pixellaphoto</a> is marked with <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/publicdomain/zero/1.0/?ref=openverse">CC0 1.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>     
-        
-    
-    <h2>Please insert a food name: </h2>
+    <section class="welcoming-page">
+        <h1>Welcome to the food content app!</h1>
+        <p><h2>Please insert a food name: </h2></p>
    
     <form action="{{ url_for('get_content') }}">
         <input type="text" name="food" id="food" placeholder="Enter food name here" />
         <button type="submit">Submit</button>
     </form>
 
-     <h4>Just a minute, it takes a while to retrieve information...</h4>
-
+     <p><h4>Just a minute, it takes a while to retrieve information...</h4></p>
+<!--         <img> -->
+    </section>
     
+<!--     <section class="welcoming-page">
+        
+             <img src="../static/{{ image }}" alt='food' width:"1920" height:"1280"> 
+    <p><h1>Welcome to the food content app!</h1></p>
+    
+     <img src="../static/{{ image }}" alt='food'> 
+
+ <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/137643065@N06/24029103260">food-salad-healthy-lunch</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/137643065@N06">pixellaphoto</a> is marked with <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/publicdomain/zero/1.0/?ref=openverse">CC0 1.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>.</p>     
+        
+    
+    <p><h2>Please insert a food name: </h2></p>
+   
+    <form action="{{ url_for('get_content') }}">
+        <input type="text" name="food" id="food" placeholder="Enter food name here" />
+        <button type="submit">Submit</button>
+    </form>
+
+     <p><h4>Just a minute, it takes a while to retrieve information...</h4></p>
+   
+    </section> -->
 </body>
     
 </html>

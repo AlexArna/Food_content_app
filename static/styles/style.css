@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
+img { display: block; } /* changing the default inline display of images */
 
-body {
+/* body {
     padding: 2rem;
     background-color: #333;
     color: whitesmoke;
@@ -15,16 +16,51 @@ body {
     align-items: center;
     gap: 2rem;
     font-size: 2rem;
+} */
+ 
+.welcoming-page {
+    background-image:url('../fruitsvegg.jpg');
+    background-size: contain/*1920px 1280px; */
+/*     border-bottom: 2px solid black; */
+/*     padding: 20px;       */
+    background-color: #333; /* fallback in case image doesn't load */
+     display: block; 
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    color: whitesmoke;
+    font-size: 2rem;
+/*     align-content: center; */
 }
 
-.attrib {
-    font-size:
-    
+.welcoming-page h1, .welcoming-page h2, .welcoming-page h4, .welcoming-page form {
+    display:flex;
+    justify-content: center;
+    text-shadow: 3px 3px 10px black;
+    padding: 30px; 
 
+}
+
+.not-found-mess {
+    display:flex;
+    align-content:center;
+}
+
+.not-found-mess h2 {
+    display:flex;
+    flex-wrap: wrap;
+}
+    
+.attribution {
+    font-size: 1rem;
+    color: darkblue;
+}
+
+a:visited {
+    color:darkblue;
 }
 
 input, button {
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 30px;
 }
