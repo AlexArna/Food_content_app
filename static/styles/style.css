@@ -40,17 +40,95 @@ img { display: block; } /* changing the default inline display of images */
 
 }
 
-.not-found-mess {
-    display:flex;
-    align-content:center;
+.not-found-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+/*     display:flex;
+    align-content:center; */
 }
 
-.not-found-mess h2 {
-    display:flex;
-    flex-wrap: wrap;
+.not-found-mess h1, .not-found-mess h3, .not-found-mess form {
+    padding: 0.5rem;
+    margin: 3rem;
+/*     display:block;
+    flex-wrap: wrap; */
 }
     
+.not-found-mess h1 {
+    font-size: 2rem;
+}
+
+section {
+    display: flow-root;
+}
+
+.background {
+    background-color: #333;
+    color: whitesmoke;
+    min-height: 100vh;
+}
+
+.bye-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+}
+
+.bye-mess h1 {
+    font-size: 2rem;
+    margin-top: 7rem;
+/*     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px; */
+}
+
+.invalid-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+}
+
+.invalid-mess h1 {
+    font-size: 2rem;
+    margin-top: 7rem;
+}
+
+.content-page {
+    background-image:url('../fruitsvegg.jpg');
+    background-color: #333; /* fallback in case image doesn't load */
+    display: block; 
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    color: whitesmoke;
+    font-size: 2rem;
+    text-shadow: 3px 3px 10px black;
+}
+
+.content-page h1, .content-page form {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+table {
+    background-color: hsla(0,0%,0%,0.503);
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+div.scroll-bar {
+   overflow-x: scroll;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
 .attribution {
+    margin: 2rem;
     font-size: 1rem;
     color: darkblue;
 }

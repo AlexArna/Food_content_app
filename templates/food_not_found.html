@@ -12,18 +12,20 @@
 </head> 
     
 <body>
-    <section class="not-found-mess">
-        <img src="../static/{{ image }}" alt="Page not found" width="400" height="400">
-        <h2>Sorry, I couldn't find any match...</h2>
-        <h2>Do you want to try again?</h2>
-        <h4>(Please answer yes or no)<h4>
+    <section class="background">
+    <section>
+    <div class="not-found-pic">
+        <img src="../static/{{ image }}" alt="Page not found" width="400" height="400"></div>
+    <div class="not-found-mess">
+        <h1>Sorry, I couldn't find any match...</h1>
+        <h1>Do you want to try again?</h1>
+        <h3>(Please answer yes or no)</h3>
         <form action="{{ url_for('get_content2') }}">
         <input type="text" name="yes_no" id="yes_no" placeholder="Enter yes or no" />
         <button type="submit">Submit</button>
-        </form>
-    </section>
+        </form></div></section>
         <p class="attribution"><a href="https://www.vecteezy.com/free-vector/vegetable">Vegetable Vectors by Vecteezy</a></p>
-
+</section>
 </body>
     
 </html>

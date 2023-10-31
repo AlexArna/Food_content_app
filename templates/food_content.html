@@ -11,19 +11,21 @@
 </head> 
     
 <body>
-    <h3>Here is some nutritional information about {{ food }} :</h3>
-    
+    <section class="content-page">
+    <p><h1><span class="nowrap">Here is some nutritional information about</span>
+        <span class="nowrap">"{{ food }}" :</span></h1></p>
+    <div class="scroll-bar">
 {% for table in tables %}
             {{ table|safe }}
 {% endfor %}
-
-    <h3>Please insert a food name:</h3>
+    </div>
+    <p><h1>Please insert a food name:</h1></p>
 
     <form action = "{{ url_for('get_content') }}">
         <input type="text" name="food" id="food" placeholder="Enter food name here" />
         <button type="submit">Submit</button>
     </form>
-
+    </section>
 </body>
     
 </html>
