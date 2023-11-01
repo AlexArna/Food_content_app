@@ -32,7 +32,7 @@ img { display: block; } /* changing the default inline display of images */
 /*     align-content: center; */
 }
 
-.welcoming-page h1, .welcoming-page h2, .welcoming-page h4, .welcoming-page form {
+.welcoming-page h1, .welcoming-page h2, .welcoming-page form {
     display:flex;
     justify-content: center;
     text-shadow: 3px 3px 10px black;
@@ -106,10 +106,15 @@ section {
     text-shadow: 3px 3px 10px black;
 }
 
-.content-page h1, .content-page form {
+.content-page form {
     display: flex;
     justify-content: center;
     padding: 3rem;
+}
+
+.content-page h1 {
+    display: inline;
+    margin: 1rem;
 }
 
 table {
@@ -117,15 +122,16 @@ table {
     border-collapse: collapse;
     font-size: 1.5rem;
     display: inline-block;
+    padding: 2rem;
 }
 
 div.scroll-bar {
    overflow-x: scroll;
 }
 
-.nowrap {
+/* .nowrap {
     white-space: nowrap;
-}
+} */
 
 .attribution {
     margin: 2rem;
