@@ -12,14 +12,14 @@
 </head> 
     
 <body>
-    <section class="background">
+    <section class="food-background">
     <section>
     <div class="not-found-pic">
         <img src="../static/{{ image }}" alt="Page not found" width="400" height="400"></div>
     <div class="not-found-mess">
         <h1>Sorry, I couldn't find any match...</h1>
         <h1>Do you want to try again?</h1>
-        <h3>(Please answer yes or no)</h3>
+        <h2>(Please answer yes or no)</h2>
         <form action="{{ url_for('get_content2') }}">
         <input type="text" name="yes_no" id="yes_no" placeholder="Enter yes or no" />
         <button type="submit">Submit</button>
