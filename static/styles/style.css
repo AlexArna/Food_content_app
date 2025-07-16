@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 
-body {
+img { display: block; } /* changing the default inline display of images */
+
+/* body {
     padding: 2rem;
     background-color: #333;
     color: whitesmoke;
@@ -14,10 +16,135 @@ body {
     align-items: center;
     gap: 2rem;
     font-size: 2rem;
+} */
+ 
+.welcoming-page {
+    background-image:url('../fruitsvegg.jpg');
+    background-size: contain/*1920px 1280px; */
+/*     border-bottom: 2px solid black; */
+/*     padding: 20px;       */
+    background-color: #333; /* fallback in case image doesn't load */
+     display: block; 
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    color: whitesmoke;
+    font-size: 2rem;
+/*     align-content: center; */
+}
+
+.welcoming-page h1, .welcoming-page h2, .welcoming-page form {
+    display:flex;
+    justify-content: center;
+    text-shadow: 3px 3px 10px black;
+    padding: 30px; 
+
+}
+
+.not-found-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+/*     display:flex;
+    align-content:center; */
+}
+
+.not-found-mess h1, .not-found-mess h3, .not-found-mess form {
+    padding: 0.5rem;
+    margin: 3rem;
+/*     display:block;
+    flex-wrap: wrap; */
+}
+    
+.not-found-mess h1 {
+    font-size: 2rem;
+}
+
+section {
+    display: flow-root;
+}
+
+.background {
+    background-color: #333;
+    color: whitesmoke;
+    min-height: 100vh;
+}
+
+.bye-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+}
+
+.bye-mess h1 {
+    font-size: 2rem;
+    margin-top: 7rem;
+/*     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px; */
+}
+
+.invalid-pic {
+    float:left;
+    margin: 2rem;
+    padding-right: 3rem;
+}
+
+.invalid-mess h1 {
+    font-size: 2rem;
+    margin-top: 7rem;
+}
+
+.content-page {
+    background-image:url('../fruitsvegg.jpg');
+    background-color: #333; /* fallback in case image doesn't load */
+    display: block; 
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    color: whitesmoke;
+    font-size: 2rem;
+    text-shadow: 3px 3px 10px black;
+}
+
+.content-page form {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.content-page h1 {
+    display: inline;
+    margin: 1rem;
+}
+
+table {
+    background-color: hsla(0,0%,0%,0.503);
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 2rem;
+}
+
+div.scroll-bar {
+   overflow-x: scroll;
+}
+
+/* .nowrap {
+    white-space: nowrap;
+} */
+
+.attribution {
+    margin: 2rem;
+    font-size: 1rem;
+    color: darkblue;
+}
+
+a:visited {
+    color:darkblue;
 }
 
 input, button {
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 30px;
 }

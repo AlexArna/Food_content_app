@@ -7,18 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food not found</title>
-    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylessheet" />
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
     
 </head> 
     
 <body>
-    <h2>Sorry, this food name is not in the database.</h2>
-    <h2>Do you want to try again?</h2> 
-    <form action="{{ url_for('get_content2') }}">
-        <input type="text" name="yes_no" id="yes_no" placeholder="Please enter yes or no" />
+    <section class="background">
+    <section>
+    <div class="not-found-pic">
+        <img src="../static/{{ image }}" alt="Page not found" width="400" height="400"></div>
+    <div class="not-found-mess">
+        <h1>Sorry, I couldn't find any match...</h1>
+        <h1>Do you want to try again?</h1>
+        <h3>(Please answer yes or no)</h3>
+        <form action="{{ url_for('get_content2') }}">
+        <input type="text" name="yes_no" id="yes_no" placeholder="Enter yes or no" />
         <button type="submit">Submit</button>
-    </form>
-
+        </form></div></section>
+        <p class="attribution"><a href="https://www.vecteezy.com/free-vector/vegetable">Vegetable Vectors by Vecteezy</a></p>
+</section>
 </body>
     
 </html>

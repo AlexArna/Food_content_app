@@ -6,17 +6,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food content</title>
-    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylessheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">   
+    </script>   
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">   
+    </script>   
+    
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
 
 </head> 
     
 <body>
-    <h1>Welcome to the food content app!</h1>
-    <h2>Please insert a food name: </h2>
+        
+    <section class="welcoming-page">
+        <h1>Welcome to the food content app!</h1>
+        <p><h2>Please start typing a food name: </h2></p>
+    
     <form action="{{ url_for('get_content') }}">
-        <input type="text" name="food" id="food" placeholder="Insert food here" />
-        <button type="submit">Submit</button>
-    </form>
+        
+        <input type="text" id="food" name="food" placeholder="Enter food name here"/> 
+    <button type="submit">Submit</button>
+    <script> 
+  $( function() { 
+    var availableEntries = [ 
+        {% for entry in entries %} 
+            "{{entry}}", 
+        {% endfor %} 
+    ]; 
+    $( "#food" ).autocomplete({ 
+      source: availableEntries 
+    }); 
+  } ); 
+  </script>
+        
+    </form> 
+
+    </section>
+
 
 </body>
     
