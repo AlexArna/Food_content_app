@@ -1,50 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food content</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">   
-    </script>   
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">   
-    </script>   
-    
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+    <title>Welcome to the food content app!</title>
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+    <!-- jQuery and jQuery UI for autocomplete -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+</head>
 
-</head> 
-    
 <body>
-        
     <section class="welcoming-page">
         <h1>Welcome to the food content app!</h1>
-        <p><h2>Please start typing a food name: </h2></p>
-    
-    <form action="{{ url_for('get_content') }}">
-        
-        <input type="text" id="food" name="food" placeholder="Enter food name here"/> 
-    <button type="submit">Submit</button>
-    <script> 
-  $( function() { 
-    var availableEntries = [ 
-        {% for entry in entries %} 
-            "{{entry}}", 
-        {% endfor %} 
-    ]; 
-    $( "#food" ).autocomplete({ 
-      source: availableEntries 
-    }); 
-  } ); 
-  </script>
-        
-    </form> 
-
+        <h2>Please start typing a food name:</h2>
+        <!-- Food search form -->
+        <form action="{{ url_for('get_content') }}">
+            <input type="text" name="food" id="food" placeholder="Enter food name here" />
+            <!-- Dynamic nutrients dropdown (multi-select) -->
+            <label for="nutrients">Select nutrients to display:</label>
+            <select id="nutrients" name="nutrients" multiple size="8">
+                {% for nutrient in nutrient_columns %}
+                    <option value="{{ nutrient }}">{{ nutrient }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <!-- Autocomplete script for the food input -->
+        <script>
+        $(function () {
+            var availableEntries = [
+                {% for entry in entries %}
+                    "{{entry}}",
+                {% endfor %}
+            ];
+            $("#food").autocomplete({
+                source: availableEntries
+            });
+        });
+        </script>
     </section>
-
-
 </body>
-    
+
 </html>
