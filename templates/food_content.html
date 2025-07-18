@@ -1,50 +1,32 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food content</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">   
-    </script>   
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">   
-    </script>   
-    
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
-    
-</head> 
-    
+    <title>Nutrition Information</title>
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+</head>
+
 <body>
     <section class="content-page">
-    <p><h1><span class="nowrap">Here is some nutritional information about </span>
-        <span class="nowrap"> "{{ food }}":</span></h1></p>
-    <div class="scroll-bar">
-{% for table in tables %}
-            {{ table|safe }}
-{% endfor %}
-    </div>
-    <p><h1>Please start typing a food name:</h1></p>
-
-    <form action = "{{ url_for('get_content') }}">
-        <input type="text" name="food" id="food" placeholder="Enter food name here" />
-        <button type="submit">Submit</button>
-     <script> 
-  $( function() { 
-    var availableEntries = [ 
-        {% for entry in entries %} 
-            "{{entry}}", 
-        {% endfor %} 
-    ]; 
-    $( "#food" ).autocomplete({ 
-      source: availableEntries 
-    }); 
-  } ); 
-  </script>
-    </form>
+        <h1>
+            <span class="nowrap">Here is some nutritional information about </span>
+            <span class="nowrap"> "{{ food }}":</span>
+        </h1>
+        <!-- Nutrition table -->
+        <div class="scroll-bar">
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+        <!-- Conversational yes/no form -->
+        <form action="{{ url_for('get_content2') }}" method="get">
+            <label for="yes_no">Would you like to select another food? (yes/no)</label>
+            <input type="text" id="yes_no" name="yes_no" autocomplete="off" required>
+            <button type="submit">Submit</button>
+        </form>
     </section>
 </body>
-    
+
 </html>
