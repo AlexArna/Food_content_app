@@ -33,14 +33,33 @@ img { display: block; } /* changing the default inline display of images */
 /*     align-content: center; */
 }
 
+/* --- UPDATED: Stack form elements vertically and add spacing --- */
+.welcoming-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Spacing between form elements */
+    padding: 30px;
+    margin-top: 50px;
+    /* Optionally, add background for readability if needed:
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    */
+}
 
-.welcoming-page h1, .welcoming-page h2, .welcoming-page form {
+/* --- OPTIONAL: Make select style match input/button, for uniformity --- */
+.welcoming-page select {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+.welcoming-page h1, .welcoming-page h2 {
     display:flex;
     justify-content: center;
     text-shadow: 5px 5px 10px black;
     padding: 30px;
     margin-top: 50px;
-
 }
 
 .not-found-pic {
@@ -140,9 +159,12 @@ section {
     background-repeat: repeat;
 }
 
+/* --- UPDATED: Stack content page form vertically for consistency --- */
 .content-page form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
     padding: 3rem;
 }
 
