@@ -23,7 +23,7 @@
         <!-- Conversational yes/no form -->
         <form action="{{ url_for('get_content2') }}" method="get">
             <label for="yes_no">Would you like to select another food? (yes/no)</label>
-            <input type="text" id="yes_no" name="yes_no" autocomplete="off" required>
+            <input type="text" id="yes_no" name="yes_no" autocomplete="off" required placeholder="Enter yes or no here">
             <button type="submit">Submit</button>
         </form>
     </section>
