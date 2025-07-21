@@ -5,69 +5,89 @@
 }
 
 img { display: block; } /* changing the default inline display of images */
-
-/* body {
-    padding: 2rem;
-    background-color: #333;
-    color: whitesmoke;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    font-size: 2rem;
-} */
  
 .welcoming-page {
     background-image:url('../fruitsvegg.jpg');
-    background-size: contain/*1920px 1280px; */
-/*     border-bottom: 2px solid black; */
-/*     padding: 20px;       */
     background-color: #333; /* fallback in case image doesn't load */
-/*      display: block;  */
     background-repeat: repeat;
     min-height: 600vh;
     color: whitesmoke;
-    font-size: 2rem;
     background-size: 30%;
-/*     align-content: center; */
 }
 
-/* --- UPDATED: Stack form elements vertically and add spacing --- */
 .welcoming-page form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Spacing between form elements */
-    padding: 30px;
-    margin-top: 50px;
-    /* Optionally, add background for readability if needed:
-    background-color: rgba(0,0,0,0.6);
-    border-radius: 20px;
-    */
+    align-items: stretch;   /* let children stretch to form width */
+    max-width: 500px;
+    width: 100%;            /* responsive */
+    margin: 0 auto;         /* center form in parent */
+    padding: 10px;
+    margin-top: -10rem;
 }
 
-/* --- OPTIONAL: Make select style match input/button, for uniformity --- */
 .welcoming-page select {
     font-size: 1rem;
     padding: 1rem;
     border-radius: 30px;
 }
 
-.welcoming-page h1, .welcoming-page h2 {
-    display:flex;
+/* Welcoming page main heading */
+.welcoming-page h1 {
+    display: flex;
     justify-content: center;
     text-shadow: 5px 5px 10px black;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
     margin-top: 50px;
+    font-size: 3.5rem;
+}
+
+/* Welcoming page subheading (e.g. "Type a food name:") */
+.welcoming-page h2 {
+    text-shadow: 5px 5px 10px black;
+    padding-top: 0;
+    padding-bottom: 10px;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    margin-left: 9rem;
+    text-align: left;
+    width: 100%;
+    font-size: 2rem;
+}
+
+/* Nutrients heading ("Select nutrients:") */
+.nutrients-label {
+    display: block;
+    width: auto;              /* Prevent stretching to 100% */
+    margin-top: 12rem !important;         /* Push heading down onto the dark background */
+    margin-bottom: 0.3rem;    /* small gap before select box */
+    text-align: left;
+    color: whitesmoke;
+    text-shadow: 5px 5px 10px black;
+}
+
+/* Nutrients dropdown */
+#nutrients {
+    margin-top: 0.7rem;      /* small gap above dropdown */
+    margin-bottom: 0.7rem;   /* small gap before button */
+}
+
+/* Submit button */
+button[type="submit"] {
+    margin-top: 0;           /* no extra gap needed */
+}
+
+/* Enter food here input box */
+input[type="text"] {
+    text-align: center;
+    margin-top:-5rem;
 }
 
 .not-found-pic {
     float:left;
     margin: 2rem;
     padding-right: 3rem;
-/*     display:flex;
-    align-content:center; */
 }
 
 div.not-found-mess {
@@ -78,10 +98,7 @@ div.not-found-mess {
     padding: 2rem;
     text-align: center;
 }
-/*     display:block;
-    flex-wrap: wrap; */
 
-    
 .not-found-mess h1 {
     font-size: 4rem;
     text-shadow: 5px 5px 10px black;
@@ -116,8 +133,6 @@ section {
 
 .bye-pic {
     float:left;
-/*     margin: 2rem; */
-/*     padding-right: 1rem; */
 }
 
 .bye-mess h1 {
@@ -126,10 +141,6 @@ section {
     text-shadow: 5px 5px 10px black;
     color: whitesmoke;
     text-align: center;
-/*     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 30px; */
 }
 
 .invalid-pic {
@@ -149,8 +160,6 @@ section {
 .content-page {
     background-image:url('../fruitsvegg.jpg');
     background-color: #333; /* fallback in case image doesn't load */
-/*     display: block;  */
-/*     background-repeat: no-repeat; */
     min-height: 200vh;
     color: whitesmoke;
     font-size: 2rem;
@@ -159,13 +168,22 @@ section {
     background-repeat: repeat;
 }
 
-/* --- UPDATED: Stack content page form vertically for consistency --- */
 .content-page form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
     padding: 3rem;
+}
+
+.content-page form label {
+    display: block;
+    margin-bottom: 1rem;   /* add space below label */
+    font-size: 2rem;
+    color: whitesmoke;
+    text-shadow: 5px 5px 10px black;
+    text-align: center;
+    width: 100%;
 }
 
 .content-page h1 {
@@ -182,12 +200,8 @@ table {
 }
 
 div.scroll-bar {
-   overflow-x: scroll;
+   overflow-x: auto;
 }
-
-/* .nowrap {
-    white-space: nowrap;
-} */
 
 .attribution {
     margin: 2rem;
@@ -203,4 +217,27 @@ input, button {
     font-size: 1rem;
     padding: 1rem;
     border-radius: 30px;
+}
+
+/* Make form fields full width (of form), not viewport */
+input[type="text"], select, button {
+    width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 9rem;
+}
+
+.content-page input[type="text"],
+.content-page button {
+    margin-left: 0;
+    margin-top:2rem;
+}
+
+.not-found-mess input[type="text"],
+.not-found-mess button {
+    width: 300px;
+    max-width: 100%;
+    margin-left: 25rem;
+    display: block;
+    margin-top: 1rem; /* spacing between input and button */
 }
