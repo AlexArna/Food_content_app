@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,24 +10,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
 </head>
-
 <body>
     <section class="welcoming-page">
-        <h1>Welcome to the food content app!</h1>
-        <h2>Please start typing a food name:</h2>
-        <!-- Food search form -->
+        <!-- Main app title -->
+        <h1 class="main-title">Welcome to the food content app!</h1>
+        <!-- Food heading -->
+        <h2 class="food-label">Type a food name:</h2>
+        <!-- Nutrients heading -->
+        <h2 class="nutrients-label">Select nutrients:</h2>
         <form action="{{ url_for('get_content') }}">
-            <input type="text" name="food" id="food" placeholder="Enter food name here" />
-            <!-- Dynamic nutrients dropdown (multi-select) -->
-            <label for="nutrients">Select nutrients to display:</label>
-            <select id="nutrients" name="nutrients" multiple size="8">
+            <!-- Food input box -->
+            <input type="text" name="food" id="food" class="food-input" placeholder="Enter food name here" />
+            <!-- Nutrients multi-select box -->
+            <select id="nutrients" name="nutrients" class="nutrients-select" multiple size="8">
                 {% for nutrient in nutrient_columns %}
                     <option value="{{ nutrient }}">{{ nutrient }}</option>
                 {% endfor %}
             </select>
-            <button type="submit">Submit</button>
+            <!-- Submit button -->
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
-        <!-- Autocomplete script for the food input -->
+        <!-- Autocomplete for food input -->
         <script>
         $(function () {
             var availableEntries = [
@@ -43,5 +45,4 @@
         </script>
     </section>
 </body>
-
 </html>
