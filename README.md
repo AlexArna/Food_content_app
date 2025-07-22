@@ -131,4 +131,4 @@ food-content-app/
 
 ## License
 
-MIT License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/AlexArna/Food_content_app/blob/main/LICENSE) file for details.
