@@ -4,4 +4,5 @@ openpyxl
 import-ipynb
 requests
 notebook
+prompt_toolkit
 #waitress (for production deployment)
