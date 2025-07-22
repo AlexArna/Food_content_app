@@ -97,8 +97,24 @@ This project also includes Jupyter notebooks used for prototyping, experimentati
  
 **Note:** The main (production-ready) web and CLI apps do not depend on these notebooks, but the code in them is compatible and reusable.
 
----
+### How to Run
 
+**1. Launch Jupyter Notebook**
+
+To explore or run the notebooks:
+
+```bash
+jupyter notebook
+```
+
+Then open `get_food_info.ipynb` and `server.ipynb` in your browser.
+
+**2. Run the Web Server**
+
+You can run the Flask server directly from `server.ipynb`.  
+By default, the app will be available at [http://localhost:5000](http://localhost:5000) unless configured otherwise.
+
+---
 ## Project Structure
 
 ```
